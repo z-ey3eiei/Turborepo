@@ -1,0 +1,10 @@
+use anyhow::{Context, Result};
+use turborepo_vercel_api_mock::start_test_server;
+
+#[tokio::main]
+async fn main() -> Result<()> {
+    let port =
+        turborepo_vercel_api_mock::request_open_port().context("failed to find open port")?;
+    tokio::task::block_in_place(|| start_test_server(port, None)).await?;
+    Ok(())
+}

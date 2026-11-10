@@ -1,0 +1,38 @@
+---
+source: crates/turborepo/tests/query.rs
+expression: query_output
+---
+{
+  "data": {
+    "package": {
+      "tasks": {
+        "items": [
+          {
+            "name": "build"
+          },
+          {
+            "name": "build0"
+          },
+          {
+            "name": "build1"
+          },
+          {
+            "name": "build2"
+          },
+          {
+            "name": "custom"
+          },
+          {
+            "name": "prepare"
+          },
+          {
+            "name": "side-quest"
+          },
+          {
+            "name": "test"
+          }
+        ]
+      }
+    }
+  }
+}
