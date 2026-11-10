@@ -1,0 +1,41 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "docs": {
+      "root": "apps/docs",
+      "framework": "nextjs"
+    },
+    "factory": {
+      "root": "apps/factory",
+      "framework": "nextjs"
+    },
+    "turborepo": {
+      "root": "crates/turborepo",
+      "runtime": "rust"
+    },
+    "turborepo-lsp": {
+      "root": "crates/turborepo-lsp",
+      "runtime": "rust"
+    },
+    "turborepo-schema-gen": {
+      "root": "crates/turborepo-schema-gen",
+      "runtime": "rust"
+    },
+    "turborepo-vercel-api-mock": {
+      "root": "crates/turborepo-vercel-api-mock",
+      "runtime": "rust"
+    },
+    "turbo-trace": {
+      "root": "crates/turbo-trace",
+      "runtime": "rust"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "docs"
+      }
+    }
+  ]
+}
