@@ -1,0 +1,29 @@
+{
+  "services": {
+    "service_one": {
+      "root": "service-one/"
+    },
+    "service_two": {
+      "root": "service-two/"
+    },
+    "site": {
+      "root": "site/"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": { "pre": "service-one." } }],
+      "destination": { "service": "service_one" }
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": { "pre": "service-two." } }],
+      "destination": { "service": "service_two" }
+    },
+    {
+      "source": "/(.*)",
+      "destination": { "service": "site" }
+    }
+  ]
+}
